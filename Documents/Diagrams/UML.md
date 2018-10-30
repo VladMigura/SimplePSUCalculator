@@ -113,3 +113,7 @@
 ### 5. Диаграмма классов <a name="5"></a>
 Диаграмма классов выглядит следующим образом:
 ![Class Diagram](./Class%20Diagram/1.%20Class%20Diagram.png)
+
+### 6. Диаграмма развертывания и компонентов <a name="6"></a>
+Диаграмма развертывания и компонентов SimplePSUCalculator представлена ниже:
+![Deployment and components](./Deployment%20and%20components/Deployment%20and%20components.png)
