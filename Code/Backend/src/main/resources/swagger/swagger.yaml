@@ -1,0 +1,153 @@
+swagger: "2.0"
+info:
+  title: SimplePSUCalculator
+  version: "0.1"
+  description: SimplePSUCalculator - api
+
+produces: ["application/json"]
+
+tags:
+  - name: motherboard
+
+paths:
+
+  "/motherboards":
+    get:
+      tags: [motherboards]
+      operationId: getMotherboards
+      security: []
+      consumes:
+        - application/json
+      responses:
+        "200":
+          description: OK
+
+definitions:
+  MotherboardModel:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+      vendor:
+        type: string
+      socket:
+        type: string
+      chipset:
+        type: string
+      form:
+        type: string
+      typeOfMemory:
+        type: string
+      numOfMemorySlots:
+        type: integer
+      maxMemoryVolume:
+        type: integer
+      numOfMemoryChannels:
+        type: integer
+      builtInGraphics:
+        type: boolean
+      yearOfIssue:
+        type: string
+      price:
+        type: integer
+      imageURL:
+        type: string
+
+  CentralProcessingUnitModel:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+      vendor:
+        type: string
+      family:
+        type: string
+      codename:
+        type: string
+      socket:
+        type: string
+      numOfCores:
+        type: integer
+      numOfThreads:
+        type: integer
+      clockFrequency:
+        type: number
+        format: double
+      maxClockFrequency:
+        type: number
+        format: double
+      tdp:
+        type: integer
+      builtInGraphics:
+        type: boolean
+      yearOfIssue:
+        type: string
+      price:
+        type: integer
+      imageURL:
+        type: string
+
+  PowerSupplyUnitModel:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+      vendor:
+        type: string
+      power:
+        type: integer
+      efficiency:
+        type: integer
+      certificate:
+        type: boolean
+      price:
+        type: integer
+      imageURL:
+        type: string
+
+  VideocardModel:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+      vendor:
+        type: string
+      gpuVendor:
+        type: string
+      clockFrequency:
+        type: number
+        format: double
+      maxClockFrequency:
+        type: number
+        format: double
+      memoryVolume:
+        type: number
+        format: double
+      typeOfMemory:
+        type: string
+      vgaSupport:
+        type: boolean
+      dviSupport:
+        type: boolean
+      hdmiSupport:
+        type: boolean
+      displayPortSupport:
+        type: boolean
+      yearOfIssue:
+        type: string
+      price:
+        type: integer
+      imageURL:
+        type: string

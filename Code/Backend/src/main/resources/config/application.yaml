@@ -1,0 +1,34 @@
+---
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: "${SPRING_DATASOURCE_URL:}"
+    username: "${SPRING_DATASOURCE_USERNAME:}"
+    password: "${SPRING_DATASOURCE_PASSWORD:}"
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+---
+spring:
+  profiles: local
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+    show-sql: true
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: abrlqzkixbnnhs
+    password: a00a723c6d485e245a8197acb98cc5f19cf6fdf1a4a51413f035c21b2182fd0c
+    url: jdbc:postgresql://ec2-204-236-230-19.compute-1.amazonaws.com:5432/d5oire7v3h8ied
+
+server:
+  port: 8080

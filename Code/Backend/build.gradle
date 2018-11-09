@@ -1,0 +1,42 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.0.RELEASE'
+
+        basePackage = "com.bsuir"
+        springfoxSwaggerVersion = "2.9.2"
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.bsuir'
+version = '0.1'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+apply from: "gradle/swagger.gradle"
+
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.flywaydb:flyway-core')
+    implementation('org.postgresql:postgresql')
+    compileOnly('org.projectlombok:lombok')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    compile("io.springfox:springfox-swagger-ui:${springfoxSwaggerVersion}") {
+        exclude module: "springfox-spring-web"
+    }
+}
