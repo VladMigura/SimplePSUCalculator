@@ -1,0 +1,45 @@
+package com.bsuir.psucalculator.converter;
+
+import com.bsuir.model.VideocardModel;
+import com.bsuir.psucalculator.entity.VideocardEntity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class VideocardConverter {
+
+    public static VideocardModel toVideocardModel(VideocardEntity videocardEntity) {
+
+        VideocardModel videocardModel = new VideocardModel();
+
+        videocardModel.setId(videocardEntity.getId());
+        videocardModel.setName(videocardEntity.getName());
+        videocardModel.setVendor(videocardEntity.getVendor());
+        videocardModel.setGpuVendor(videocardEntity.getGpuVendor());
+        videocardModel.setClockFrequency(videocardEntity.getClockFrequency());
+        videocardModel.setMaxClockFrequency(videocardEntity.getMaxClockFrequency());
+        videocardModel.setMemoryVolume(videocardEntity.getMemoryVolume());
+        videocardModel.setTypeOfMemory(videocardEntity.getTypeOfMemory());
+        videocardModel.setVgaSupport(videocardEntity.isVgaSuport());
+        videocardModel.setDviSupport(videocardEntity.isDviSupport());
+        videocardModel.setHdmiSupport(videocardEntity.isHdmiSupport());
+        videocardModel.setDisplayPortSupport(videocardEntity.isDisplayPortSupport());
+        videocardModel.setYearOfIssue(videocardEntity.getYearOfIssue());
+        videocardModel.setPrice(videocardEntity.getPrice());
+        videocardModel.setImageURL(videocardEntity.getImageUrl());
+        videocardModel.setTdp(videocardEntity.getTdp());
+
+        return videocardModel;
+    }
+
+    public static List<VideocardModel> toVideocardModels(List<VideocardEntity> videocardEntities) {
+
+        List<VideocardModel> videocardModels = new ArrayList<>();
+
+        videocardEntities.forEach(videocardEntity -> {
+            videocardModels.add(VideocardConverter.toVideocardModel(videocardEntity));
+        });
+
+        return videocardModels;
+    }
+}

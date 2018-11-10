@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @Entity
 @Data
@@ -31,16 +30,16 @@ public class VideocardEntity {
     private String gpuVendor;
 
     @Column(name = "clock_frequency")
-    private BigDecimal clockFrequency;
+    private double clockFrequency;
 
     @Column(name = "max_clock_frequency")
-    private BigDecimal maxClockFrequency;
+    private double maxClockFrequency;
 
     @Column(name = "tdp")
     private int tdp;
 
     @Column(name = "memory_volume")
-    private BigDecimal memoryVolume;
+    private double memoryVolume;
 
     @Column(name = "type_of_memory")
     private String typeOfMemory;
@@ -58,10 +57,10 @@ public class VideocardEntity {
     private boolean displayPortSupport;
 
     @Column(name = "year_of_issue")
-    private String year_of_issue;
+    private String yearOfIssue;
 
     @Column(name = "price")
-    private BigDecimal price;
+    private double price;
 
     @Column(name = "image_url")
     private String imageUrl;

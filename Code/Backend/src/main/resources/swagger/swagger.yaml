@@ -7,20 +7,74 @@ info:
 produces: ["application/json"]
 
 tags:
-  - name: motherboard
+  - name: Motherboard
+  - name: Processor
+  - name: Videocard
 
 paths:
 
+  "/processors":
+    get:
+      tags: [Processor]
+      operationId: getProcessors
+      security: []
+      consumes:
+        - application/json
+      parameters:
+        - "$ref": "#/parameters/CpuVendorParameter"
+        - "$ref": "#/parameters/CpuFamilyParameter"
+        - "$ref": "#/parameters/CpuSocketParameter"
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: array
+            items:
+              "$ref": "#/definitions/CentralProcessingUnitModel"
+        "400":
+          description: Bad Request
+
   "/motherboards":
     get:
-      tags: [motherboards]
+      tags: [Motherboard]
       operationId: getMotherboards
       security: []
       consumes:
         - application/json
+      parameters:
+        - "$ref": "#/parameters/SupportedCpuSocketParameter"
+        - "$ref": "#/parameters/MotherboardVendorParameter"
+        - "$ref": "#/parameters/MotherboardChipsetParameter"
+        - "$ref": "#/parameters/MotherboardFormParameter"
       responses:
         "200":
           description: OK
+          schema:
+            type: array
+            items:
+              "$ref": "#/definitions/MotherboardModel"
+        "400":
+          description: Bad Request
+
+  "/videocards":
+    get:
+      tags: [Videocard]
+      operationId: getVideocards
+      security: []
+      consumes:
+        - application/json
+      parameters:
+        - "$ref": "#/parameters/VideocardGpuVendorParameter"
+        - "$ref": "#/parameters/VideocardVendorParameter"
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: array
+            items:
+              "$ref": "#/definitions/VideocardModel"
+        "400":
+          description: Bad Request
 
 definitions:
   MotherboardModel:
@@ -52,7 +106,8 @@ definitions:
       yearOfIssue:
         type: string
       price:
-        type: integer
+        type: number
+        format: double
       imageURL:
         type: string
 
@@ -89,7 +144,8 @@ definitions:
       yearOfIssue:
         type: string
       price:
-        type: integer
+        type: number
+        format: double
       imageURL:
         type: string
 
@@ -110,7 +166,8 @@ definitions:
       certificate:
         type: boolean
       price:
-        type: integer
+        type: number
+        format: double
       imageURL:
         type: string
 
@@ -150,7 +207,8 @@ definitions:
       yearOfIssue:
         type: string
       price:
-        type: integer
+        type: number
+        format: double
       imageURL:
         type: string
 
@@ -172,6 +230,12 @@ parameters:
     in: query
     type: string
     required: false
+
+  SupportedCpuSocketParameter:
+    name: supportedCpuSocket
+    in: query
+    type: string
+    required: true
 
   MotherboardVendorParameter:
     name: motherboardVendor

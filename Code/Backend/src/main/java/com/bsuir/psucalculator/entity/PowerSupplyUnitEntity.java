@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @Entity
 @Data
@@ -37,7 +36,7 @@ public class PowerSupplyUnitEntity {
     private boolean certificate;
 
     @Column(name = "price")
-    private BigDecimal price;
+    private double price;
 
     @Column(name = "image_url")
     private String imageUrl;
