@@ -10,6 +10,7 @@ tags:
   - name: Motherboard
   - name: Processor
   - name: Videocard
+  - name: Result
 
 paths:
 
@@ -106,6 +107,27 @@ paths:
           description: OK
           schema:
             "$ref": "#/definitions/VideocardFiltersModel"
+        "400":
+          description: Bad Request
+
+  "/result":
+    get:
+      tags: [Result]
+      operationId: getResult
+      security: []
+      parameters:
+        - "$ref": "#/parameters/CpuTdpParameter"
+        - "$ref": "#/parameters/VideocardTdpParameter"
+        - "$ref": "#/parameters/HddSsdCountParameter"
+        - "$ref": "#/parameters/CdDvdCountParameter"
+        - "$ref": "#/parameters/BluRayCountParameter"
+        - "$ref": "#/parameters/RamModulesCountParameter"
+        - "$ref": "#/parameters/FansCountParameter"
+      responses:
+        "200":
+          description: OK
+          schema:
+            "$ref": "#/definitions/ResultResponseModel"
         "400":
           description: Bad Request
 
@@ -289,6 +311,24 @@ definitions:
         items:
           type: string
 
+  ResultResponseModel:
+    type: object
+    properties:
+      powerSupplyUnits:
+        type: array
+        items:
+          "$ref": "#/definitions/PowerSupplyUnitModel"
+      powerSupplyModel:
+        "$ref": "#/definitions/PowerSupplyModel"
+
+  PowerSupplyModel:
+    type: object
+    properties:
+      minimumPowerSupply:
+        type: integer
+      recommendedPowerSupply:
+        type:  integer
+
 parameters:
   CpuVendorParameter:
     name: cpuVendor
@@ -343,3 +383,45 @@ parameters:
     in: query
     type: string
     required: false
+
+  CpuTdpParameter:
+    name: cpuTdpValue
+    in: query
+    type: integer
+    required: true
+
+  VideocardTdpParameter:
+    name: videocardTdpValue
+    in: query
+    type: integer
+    required: true
+
+  HddSsdCountParameter:
+    name: hddSsdCount
+    in: query
+    type: integer
+    required: true
+
+  CdDvdCountParameter:
+    name: cdDvdCount
+    in: query
+    type: integer
+    required: true
+
+  BluRayCountParameter:
+    name: bluRayCount
+    in: query
+    type: integer
+    required: true
+
+  RamModulesCountParameter:
+    name: ramModulesCount
+    in: query
+    type: integer
+    required: true
+
+  FansCountParameter:
+    name: fansCount
+    in: query
+    type: integer
+    required: true
