@@ -1,5 +1,8 @@
 package com.bsuir.psucalculator.service.impl;
 
+import com.bsuir.model.VideocardFiltersModel;
+import com.bsuir.model.VideocardModel;
+import com.bsuir.psucalculator.converter.VideocardConverter;
 import com.bsuir.psucalculator.entity.VideocardEntity;
 import com.bsuir.psucalculator.repository.VideocardRepository;
 import com.bsuir.psucalculator.service.VideocardService;
@@ -15,8 +18,22 @@ public class VideocardServiceImpl implements VideocardService {
     private VideocardRepository videocardRepository;
 
     @Override
-    public List<VideocardEntity> getVideocardsByParameters(String videocardGpuVendor, String videocardVendor) {
+    public List<VideocardModel> getVideocardsByParameters(String videocardGpuVendor, String videocardVendor) {
 
-        return null;
+        List<VideocardEntity> videocardEntities =
+                videocardRepository.findAllByParameters(videocardGpuVendor, videocardVendor);
+
+        return VideocardConverter.toVideocardModels(videocardEntities);
+    }
+
+    @Override
+    public VideocardFiltersModel getVideocardFilters() {
+
+        VideocardFiltersModel videocardFiltersModel = new VideocardFiltersModel();
+
+        videocardFiltersModel.setGpuVendors(videocardRepository.getGpuVendors());
+        videocardFiltersModel.setVendors(videocardRepository.getVendors());
+
+        return videocardFiltersModel;
     }
 }

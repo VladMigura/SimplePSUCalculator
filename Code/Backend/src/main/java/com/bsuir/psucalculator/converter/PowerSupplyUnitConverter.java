@@ -18,7 +18,7 @@ public class PowerSupplyUnitConverter {
         powerSupplyUnitModel.setPower(powerSupplyUnitEntity.getPower());
         powerSupplyUnitModel.setEfficiency(powerSupplyUnitEntity.getEfficiency());
         powerSupplyUnitModel.setCertificate(powerSupplyUnitEntity.isCertificate());
-        powerSupplyUnitModel.setPrice(powerSupplyUnitEntity.getPrice());
+        powerSupplyUnitModel.setPrice(powerSupplyUnitEntity.getPrice().doubleValue());
         powerSupplyUnitModel.setImageURL(powerSupplyUnitEntity.getImageUrl());
 
         return powerSupplyUnitModel;

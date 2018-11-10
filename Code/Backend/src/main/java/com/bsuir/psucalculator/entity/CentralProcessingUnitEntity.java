@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Data
@@ -42,10 +43,10 @@ public class CentralProcessingUnitEntity {
     private int numOfThreads;
 
     @Column(name = "clock_frequency")
-    private double clockFrequency;
+    private BigDecimal clockFrequency;
 
     @Column(name = "max_clock_frequency")
-    private double maxClockFrequency;
+    private BigDecimal maxClockFrequency;
 
     @Column(name = "tdp")
     private int tdp;
@@ -57,7 +58,7 @@ public class CentralProcessingUnitEntity {
     private String yearOfIssue;
 
     @Column(name = "price")
-    private double price;
+    private BigDecimal price;
 
     @Column(name = "image_url")
     private String imageUrl;

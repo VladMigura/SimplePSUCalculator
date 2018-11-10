@@ -24,7 +24,7 @@ public class MotherboardConverter {
         motherboardModel.setNumOfMemoryChannels(motherboardEntity.getNumOfMemoryChannels());
         motherboardModel.setBuiltInGraphics(motherboardEntity.isBuiltInGraphics());
         motherboardModel.setYearOfIssue(motherboardEntity.getYearOfIssue());
-        motherboardModel.setPrice(motherboardEntity.getPrice());
+        motherboardModel.setPrice(motherboardEntity.getPrice().doubleValue());
         motherboardModel.setImageURL(motherboardEntity.getImageUrl());
 
         return motherboardModel;

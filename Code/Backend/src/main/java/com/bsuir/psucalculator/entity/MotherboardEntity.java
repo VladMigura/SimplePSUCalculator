@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Data
@@ -54,7 +55,7 @@ public class MotherboardEntity {
     private String yearOfIssue;
 
     @Column(name = "price")
-    private double price;
+    private BigDecimal price;
 
     @Column(name = "image_url")
     private String imageUrl;

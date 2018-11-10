@@ -1,10 +1,12 @@
 package com.bsuir.psucalculator.service;
 
-import com.bsuir.psucalculator.entity.VideocardEntity;
+import com.bsuir.model.VideocardFiltersModel;
+import com.bsuir.model.VideocardModel;
 
 import java.util.List;
 
 public interface VideocardService {
 
-    List<VideocardEntity> getVideocardsByParameters(String videocardGpuVendor, String videocardVendor);
+    List<VideocardModel> getVideocardsByParameters(String videocardGpuVendor, String videocardVendor);
+    VideocardFiltersModel getVideocardFilters();
 }

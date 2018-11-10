@@ -21,12 +21,12 @@ public class CentralProcessingUnitConverter {
         centralProcessingUnitModel.setSocket(centralProcessingUnitEntity.getSocket());
         centralProcessingUnitModel.setNumOfCores(centralProcessingUnitEntity.getNumOfCores());
         centralProcessingUnitModel.setNumOfThreads(centralProcessingUnitEntity.getNumOfThreads());
-        centralProcessingUnitModel.setClockFrequency(centralProcessingUnitModel.getMaxClockFrequency());
-        centralProcessingUnitModel.setMaxClockFrequency(centralProcessingUnitEntity.getMaxClockFrequency());
+        centralProcessingUnitModel.setClockFrequency(centralProcessingUnitEntity.getClockFrequency().doubleValue());
+        centralProcessingUnitModel.setMaxClockFrequency(centralProcessingUnitEntity.getMaxClockFrequency().doubleValue());
         centralProcessingUnitModel.setTdp(centralProcessingUnitEntity.getTdp());
         centralProcessingUnitModel.setBuiltInGraphics(centralProcessingUnitEntity.isBuiltInGraphics());
         centralProcessingUnitModel.setYearOfIssue(centralProcessingUnitEntity.getYearOfIssue());
-        centralProcessingUnitModel.setPrice(centralProcessingUnitEntity.getPrice());
+        centralProcessingUnitModel.setPrice(centralProcessingUnitEntity.getPrice().doubleValue());
         centralProcessingUnitModel.setImageURL(centralProcessingUnitEntity.getImageUrl());
 
         return centralProcessingUnitModel;

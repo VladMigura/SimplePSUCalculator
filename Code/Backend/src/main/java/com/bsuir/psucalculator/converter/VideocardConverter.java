@@ -16,16 +16,16 @@ public class VideocardConverter {
         videocardModel.setName(videocardEntity.getName());
         videocardModel.setVendor(videocardEntity.getVendor());
         videocardModel.setGpuVendor(videocardEntity.getGpuVendor());
-        videocardModel.setClockFrequency(videocardEntity.getClockFrequency());
-        videocardModel.setMaxClockFrequency(videocardEntity.getMaxClockFrequency());
-        videocardModel.setMemoryVolume(videocardEntity.getMemoryVolume());
+        videocardModel.setClockFrequency(videocardEntity.getClockFrequency().doubleValue());
+        videocardModel.setMaxClockFrequency(videocardEntity.getMaxClockFrequency().doubleValue());
+        videocardModel.setMemoryVolume(videocardEntity.getMemoryVolume().doubleValue());
         videocardModel.setTypeOfMemory(videocardEntity.getTypeOfMemory());
         videocardModel.setVgaSupport(videocardEntity.isVgaSuport());
         videocardModel.setDviSupport(videocardEntity.isDviSupport());
         videocardModel.setHdmiSupport(videocardEntity.isHdmiSupport());
         videocardModel.setDisplayPortSupport(videocardEntity.isDisplayPortSupport());
         videocardModel.setYearOfIssue(videocardEntity.getYearOfIssue());
-        videocardModel.setPrice(videocardEntity.getPrice());
+        videocardModel.setPrice(videocardEntity.getPrice().doubleValue());
         videocardModel.setImageURL(videocardEntity.getImageUrl());
         videocardModel.setTdp(videocardEntity.getTdp());
 
