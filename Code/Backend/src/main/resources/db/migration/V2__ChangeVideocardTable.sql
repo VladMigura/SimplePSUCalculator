@@ -1,0 +1,1 @@
+ALTER TABLE videocard ADD COLUMN tdp INTEGER;

@@ -35,6 +35,7 @@ dependencies {
     implementation('org.postgresql:postgresql')
     compileOnly('org.projectlombok:lombok')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+    compile group: 'org.hibernate', name: 'hibernate-java8', version: '5.3.6.Final'
 
     compile("io.springfox:springfox-swagger-ui:${springfoxSwaggerVersion}") {
         exclude module: "springfox-spring-web"

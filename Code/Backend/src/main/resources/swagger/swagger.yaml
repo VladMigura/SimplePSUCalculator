@@ -132,6 +132,8 @@ definitions:
       maxClockFrequency:
         type: number
         format: double
+      tdp:
+        type: integer
       memoryVolume:
         type: number
         format: double
@@ -151,3 +153,52 @@ definitions:
         type: integer
       imageURL:
         type: string
+
+parameters:
+  CpuVendorParameter:
+    name: cpuVendor
+    in: query
+    type: string
+    required: false
+
+  CpuFamilyParameter:
+    name: cpuFamily
+    in: query
+    type: string
+    required: false
+
+  CpuSocketParameter:
+    name: cpuSocket
+    in: query
+    type: string
+    required: false
+
+  MotherboardVendorParameter:
+    name: motherboardVendor
+    in: query
+    type: string
+    required: false
+
+  MotherboardChipsetParameter:
+    name: motherboardChipset
+    in: query
+    type: string
+    required: false
+
+  MotherboardFormParameter:
+    name: motherboardForm
+    in: query
+    type: string
+    required: false
+
+  VideocardGpuVendorParameter:
+    name: videocardGpuVendor
+    in: query
+    type: string
+    required: false
+
+  VideocardVendorParameter:
+    name: videocardVendor
+    in: query
+    type: string
+    required: false
