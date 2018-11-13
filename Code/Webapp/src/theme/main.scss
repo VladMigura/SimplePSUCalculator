@@ -1,0 +1,13 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $bodyBg;
+  font-family: "Roboto", sans-serif;
+  font-size: 100%;
+}
