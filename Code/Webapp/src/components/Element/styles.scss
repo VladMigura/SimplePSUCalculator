@@ -1,0 +1,18 @@
+@import './../../theme/variables';
+@import './../../theme/mixins';
+.element {
+    border: 2px solid $navBg;
+    padding: 15px;
+    margin-left: 15px;
+    .element_icon {
+        float: left;
+        margin-right: 15px;
+    }
+    .describe {
+        display: flex;
+        flex-direction: column;
+        color: $navBg;
+        h1 {}
+        p {}
+    }
+}

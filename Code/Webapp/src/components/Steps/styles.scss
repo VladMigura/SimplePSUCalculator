@@ -1,0 +1,27 @@
+@import './../../theme/variables';
+@import './../../theme/mixins';
+.buttons {
+    width: 100%;
+    max-width: 1280px;
+    @include center(row);
+    justify-content: space-between;
+    margin: 30px auto;
+    border-bottom: 3px solid $navBg;
+    padding-bottom: 10px;
+}
+
+.steps {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    .elements {
+        max-height: 620px;
+        overflow-y: scroll;
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+}

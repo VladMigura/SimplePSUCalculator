@@ -1,0 +1,27 @@
+@import "../../theme/variables.scss";
+@import "../../theme/mixins.scss";
+.navbar {
+    background-color: $navBg;
+    color: #fff;
+    padding: 25px;
+    text-transform: uppercase;
+    @include center(row);
+    justify-content: space-between;
+    .logo {
+        cursor: pointer;
+    }
+    .menu {
+        .menu_items {
+            @include center(row);
+            list-style: none;
+            li {
+                cursor: pointer;
+                margin-left: 15px;
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

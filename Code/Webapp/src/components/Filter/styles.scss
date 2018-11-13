@@ -1,0 +1,12 @@
+@import './../../theme/variables';
+@import './../../theme/mixins';
+.filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 250px;
+    width: 100%;
+    button {
+        margin-top: 15px;
+    }
+}
